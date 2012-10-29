@@ -1,10 +1,6 @@
-veganamongus
-============
-
-A social recipe experience
-
 # TheVeganAmongUs (VAU)
-## A Social Recipe website
+=======================
+## A Social Recipe Experience
 
 VAU is a social recipe site, and this is the source for it.  It will have the following basic features upon completion:
 
