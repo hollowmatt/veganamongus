@@ -1,0 +1,29 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  username:
+  password:
+  host: localhost
+  port: 5432
+
+development:
+  <<: *default
+  database: thevegan_dev
+
+test: &test
+  <<: *default
+  database: thevegan_test
+
+production:
+  <<: *default
+  database: thevegan_prod
+
+cucumber:
+  <<: *test
