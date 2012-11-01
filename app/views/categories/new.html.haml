@@ -1,0 +1,13 @@
+-title("The Vegan Among Us | Add Category")
+%h1 New Recipe Category
+
+.row
+  .span6.offset3
+    = simple_form_for @category do |f|
+
+      %fieldset
+        = f.input :name, :label => "Name", :input_html => {:class => "full-width"}, :autofocus => true
+      %fieldset
+        = f.input :description, :label => "Description", :input_html => {:class => "full-width"}
+      %fieldset
+        = f.submit "Add Category", :class => "btn btn-success btn-xx-large center"
