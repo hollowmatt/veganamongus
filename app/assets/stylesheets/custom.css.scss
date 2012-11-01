@@ -1,0 +1,156 @@
+/*
+ * This is a custom css file for Vegan Among Us
+ */
+@import "bootstrap";
+
+$bodyColor: #ffffff;
+$footerColor: #999;
+$lightGray: #999;
+$logoColor: #ffffff;
+$footerBorder: #eaeaea;
+
+@mixin box_sizing {
+  background-color: $grayLighter;
+  padding: 20px;
+  margin: 0 -20px;
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
+  box-shadow: 0 1px 2px rgba(0,0,0,.15);
+}
+
+.content {
+  background-color: $bodyColor;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent the amount of the padding to maintain the grid system */
+}
+
+/*
+ * Universal Components
+ */
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  padding-top: 60px;
+}
+
+section {
+  overflow: auto;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.center {
+  text-align: center;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+  &.left{
+    text-align: left;
+  }
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: $lightGray;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/*
+ * Header format
+ */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  padding-left: 10px;
+  font-weight: bold;
+  line-height: 1;
+  &:hover {
+    color: #ffffff;
+    text-decoration: none;
+  }
+}
+
+/*
+ * Footer format
+ */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: $lightGray;
+  small {
+    float: left;
+    padding-left: 10px;
+  }
+  .pad_right {
+    padding-right: 10px;
+  }
+  a {
+    color: #555;
+    &:hover {
+      color: #222;
+    }
+  }
+  footer small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
+}
+
+/*
+ * Error Format
+ */
+
+#error_explanation {
+  color: #f00;
+  ul {
+    list-style: none;
+    margin: 0 0 18px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .control-group;
+  @extend .error;
+}
