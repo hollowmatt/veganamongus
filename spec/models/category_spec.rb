@@ -22,7 +22,7 @@ describe Category do
   #Test to ensure it has a name
   describe "name is absent" do
     before { @category.name = '' }
-    it { should_not be_valid}
+    it { should_not be_valid }
   end
 
   #Test to ensure it has a description
