@@ -1,2 +1,7 @@
-%h1 Category#show
-%p Find me in app/views/category/show.html.haml
+-title("The Vegan Among Us | #{@category.name}")
+.row
+  .container
+    .span8
+      %h1.left= @category.name
+      %p= @category.description
+      %p= link_to "Edit Category", edit_category_path(@category)
