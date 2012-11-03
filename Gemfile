@@ -16,7 +16,7 @@ end
 group :test do
   gem 'rspec'
   gem 'capybara'
-  gem 'spork'
+  #gem 'spork'
 end
 
 gem 'jquery-rails'
@@ -35,6 +35,9 @@ gem "cancan", ">= 1.6.8"
 gem "rolify", ">= 3.2.0"
 gem "simple_form", ">= 2.0.4"
 gem "quiet_assets", ">= 1.0.1", :group => :development
+gem "will_paginate"
+=begin
 gem "guard-rspec", :group => [:development, :test]
 gem "rb-fsevent", :require => false, :group => :test
 gem "guard-spork", :group => [:development, :test]
+=end

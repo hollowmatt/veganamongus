@@ -4,4 +4,9 @@
     .span8
       %h1.left= @category.name
       %p= @category.description
-      %p= link_to "Edit Category", edit_category_path(@category)
+      %p
+        - if user_signed_in?
+          - if current_user.has_role? :admin
+            =link_to "Edit Category", edit_category_path(@category)
+            |
+        =link_to "All Categories", categories_path

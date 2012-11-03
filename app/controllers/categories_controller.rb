@@ -1,10 +1,10 @@
 class CategoriesController < ApplicationController
-  #before_filter :authenticate_user!, :except => [:index, :show]
-  #before_filter :admin, only: [:new, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :admin, only: [:new, :edit, :update, :destroy]
   before_filter :find_cat, only: [:edit, :show, :destroy]
 
   def index
-    @categories = Category.all
+    @categories = Category.paginate(page: params[:page], per_page: 10)
   end
 
   def new
@@ -29,7 +29,7 @@ class CategoriesController < ApplicationController
   def update
     @category = Category.find(params[:id])
     if @category.update_attributes(params[:category])
-      redirect_to category_path(@category), notice: "Category #{@category.name} has been updated."
+      redirect_to categories_path, notice: "Category #{@category.name} has been updated."
     else
       render 'edit'
     end

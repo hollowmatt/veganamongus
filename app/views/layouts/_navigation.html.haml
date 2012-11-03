@@ -1,6 +1,10 @@
 .navbar.navbar-inverse.navbar-fixed-top
   %nav.navbar-inner
     = link_to "The Vegan Among Us", root_path, id: 'logo'
+    %ul.nav.pull-left
+      - if user_signed_in?
+        %li
+          = link_to current_user.name, '#'
     %ul.nav.pull-right
       - if user_signed_in?
         %li
@@ -35,4 +39,3 @@
                 = link_to "Add Category", new_category_path, method: "get"
               %li
                 = link_to "Add Recipe", '#'
-
