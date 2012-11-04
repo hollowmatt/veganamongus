@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(params[:recipe])
     @recipe.user = current_user
     if @recipe.save
-      redirect_to recipe_path(@recipe), notice: "Recipe #{@recipe.name} has been added."
+      redirect_to recipes_path, notice: "Recipe #{@recipe.name} has been added."
     else
       render 'new'
     end

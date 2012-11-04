@@ -1,0 +1,12 @@
+-title("The Vegan Among Us | #{@recipe.name}")
+.row
+  .container
+    .span8
+      %h1.left= @recipe.name
+      = render 'recipe_detail'
+      %p
+        - if user_signed_in?
+          - if current_user.has_role? :admin
+            =link_to "Edit Recipe", edit_recipe_path(@recipe)
+            |
+        =link_to "All Recipes", recipes_path

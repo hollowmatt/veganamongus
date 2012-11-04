@@ -1,0 +1,35 @@
+
+-## == Schema Information
+-##
+-## Table name: recipes
+-##
+-##  id         :integer         not null, primary key
+-##  name       :string(255)
+-##  user_id    :integer
+-##  prep_time  :string(255)
+-##  cook_time  :string(255)
+-##  servings   :integer
+-##  method     :text
+-##  created_at :datetime        not null
+-##  updated_at :datetime        not null
+-##
+
+-title("The Vegan Among Us | Add Recipe")
+%h1 New Recipe
+
+.row
+  .span8.offset3
+    = simple_form_for @recipe do |f|
+      %fieldset
+        = f.input :name, :label => "Name", :input_html => {:class => "full-width"}, :autofocus => true
+      %fieldset
+        = f.input :prep_time, :label => "Preparation Time", :input_html => {:class => "full-width"}
+      %fieldset
+        = f.input :cook_time, :label => "Cooking Time", :input_html => {:class => "full-width"}
+      %fieldset
+        = f.input :servings, :label => "Number of Servings", :input_html => {:class => "full-width"}
+      %fieldset
+        = f.label "Method"
+        = f.text_area :method, placeholder: "Type in the method...", :input_html => {:class => "full-width"}
+      %fieldset
+        = f.submit "Add Recipe", :class => "btn btn-success btn-xx-large center"

@@ -1,6 +1,11 @@
 -title("The Vegan Among Us | Recipes")
 .span8
-  %h3=@recipes.count
+  %h3
+    = @recipes.count
+    - if @recipes.count == 1
+      Recipe
+    - else
+      Recipes
   %table.table.table-condensed
     %thead
       %tr
