@@ -19,6 +19,3 @@ class Category < ActiveRecord::Base
 
   default_scope order: 'categories.name ASC'
 end
-
-
-

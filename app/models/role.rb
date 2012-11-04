@@ -16,5 +16,3 @@ class Role < ActiveRecord::Base
   scopify
 end
 
-
-
