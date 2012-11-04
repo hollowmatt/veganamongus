@@ -206,3 +206,14 @@ footer {
     margin-left: 1em;
   }
 }
+
+i {
+  color: #00008b;
+  font-size: large;
+  &.ltblue {
+    color: #add8e6;
+  }
+  &.red {
+    color: #ff0000;
+  }
+}
