@@ -31,8 +31,37 @@ describe Recipe do
 
   it { should be_valid }
 
+  describe "when name is not present" do
+    before { @recipe.name = "" }
+    it { should_not be_valid }
+  end
+
+  describe "when method is not present" do
+    before { @recipe.method = "" }
+    it { should_not be_valid }
+  end
+
   # Note: Decided it was valid to have the user_id accessible and optional,
   # don't want to delete a recipe if a user is deleted.
+
+  describe "ingredient associations" do
+    before { @recipe.save }
+    let!(:ingredient_one) do
+      @recipe.ingredients.build(amount: 1.5, measure: "tsp", item: "ground cinnamon")
+    end
+    let!(:ingredient_two) do
+      @recipe.ingredients.build(amount: 1.5, measure: "tsp", item: "ground nutmeg")
+    end
+
+    it "should destroy associated ingredients" do
+      ingredients = @recipe.ingredients.dup
+      @recipe.destroy
+      ingredients.should_not be_empty
+      ingredients.each do |ing|
+        Ingredient.find_by_id(ing.id).should be_nil
+      end
+    end
+  end
 end
 
 

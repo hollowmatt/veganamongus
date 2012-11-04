@@ -16,6 +16,14 @@ class Ingredient < ActiveRecord::Base
 
   validates :recipe_id,
             presence: true
+  validates :amount,
+            presence: true
+  validates :measure,
+            presence: true
+  validates :item,
+            presence: true
+
+  default_scope order: "ingredients.created_at ASC"
 
 end
 

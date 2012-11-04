@@ -17,6 +17,11 @@ class Recipe < ActiveRecord::Base
   has_many :ingredients, dependent: :delete_all
   accepts_nested_attributes_for :ingredients, allow_destroy: true
 
+  validates :name,
+            presence: true
+  validates :method,
+            presence: true
+
   attr_accessible :cook_time, :method, :name, :prep_time, :servings, :user_id
 end
 

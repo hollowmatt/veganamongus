@@ -31,6 +31,21 @@ describe Ingredient do
     it { should_not be_valid }
   end
 
+  describe "when amount is not present" do
+    before { @ingredient.amount = nil }
+    it { should_not be_valid }
+  end
+
+  describe "when measure is not present" do
+    before { @ingredient.measure = "" }
+    it { should_not be_valid }
+  end
+
+  describe "when item is not present" do
+    before { @ingredient.item = "" }
+    it { should_not be_valid }
+  end
+
   describe "accessible attributes" do
     it "should not allow access to recipe_id" do
       expect do
