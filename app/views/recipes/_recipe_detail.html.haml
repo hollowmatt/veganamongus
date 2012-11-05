@@ -1,5 +1,5 @@
 .div
-  .hero-unit
+  .recipe-show
     %table
       %tbody
         %tr
@@ -15,10 +15,24 @@
           %th Cook Time:
           %td= @recipe.cook_time
 
-    %h2 Ingredients
-    %p Not yet implemented.
+    %h2= "Ingredients"
+    .span8
+      %table.table.table-condensed
+        %thead
+          %tr
+            %th Amount
+            %th Measure
+            %th Item
+            %th
+        %tbody
+          = render 'ingredients'
+    %hr
+    - if user_signed_in?
+      - if current_user.has_role? :admin
+        %h4= "Add Ingredient"
+        = render 'ingredients/form'
+        %hr
 
-
-    %h2 Method
+    %h2= "Method"
     .content
       = @recipe.method

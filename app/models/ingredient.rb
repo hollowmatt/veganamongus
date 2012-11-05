@@ -12,7 +12,7 @@
 #
 class Ingredient < ActiveRecord::Base
   belongs_to :recipe
-  attr_accessible :amount, :item, :measure
+  attr_accessible :amount, :item, :measure, :recipe
 
   validates :recipe_id,
             presence: true

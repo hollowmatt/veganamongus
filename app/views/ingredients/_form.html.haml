@@ -1,0 +1,25 @@
+-## == Schema Information
+-##
+-## Table name: ingredients
+-##
+-##  id         :integer         not null, primary key
+-##  amount     :float
+-##  measure    :string(255)
+-##  item       :string(255)
+-##  recipe_id  :integer
+-##  created_at :datetime        not null
+-##  updated_at :datetime        not null
+-##
+.row
+  .span8.offset3
+    = form_for [@recipe, @recipe.ingredients.build] do |f|
+      = f.label :amount
+      = f.text_field :amount, :autofocus => true
+
+      = f.label :measure
+      = f.text_field :measure
+
+      = f.label :item
+      = f.text_field :item
+      %br
+      = f.submit "Add Ingredient", :class => "btn btn-success btn-mini center"

@@ -163,11 +163,14 @@ footer {
   -webkit-box-shadow: 0 5px 10px rgba(0,128,0,.35);
   -moz-box-shadow: 0 5px 10px rgba(0,128,0,.35);
   box-shadow: 0 5px 10px rgba(0,128,0,.35);
+}
+.recipe-show {
   th {
     text-align: left;
   }
   td {
     text-align: left;
+    padding-left: 5px;
   }
 }
 

@@ -1,0 +1,23 @@
+-## == Schema Information
+-##
+-## Table name: ingredients
+-##
+-##  id         :integer         not null, primary key
+-##  amount     :float
+-##  measure    :string(255)
+-##  item       :string(255)
+-##  recipe_id  :integer
+-##  created_at :datetime        not null
+-##  updated_at :datetime        not null
+-##
+
+%tr
+  %td= ingredient.amount
+  %td= ingredient.measure
+  %td= ingredient.item
+  %td
+    - if user_signed_in?
+      - if current_user.has_role? :admin
+        = link_to("Remove", [ingredient.recipe, ingredient],
+                  confirm: 'Really remove ingredient?',
+                  method: :delete, class: 'btn btn-mini btn-danger')
