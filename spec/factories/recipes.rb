@@ -8,5 +8,6 @@ FactoryGirl.define do
     cook_time "MyString"
     servings 1
     method "MyText"
+    category_id 1
   end
 end

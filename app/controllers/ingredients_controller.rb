@@ -10,7 +10,7 @@ class IngredientsController < ApplicationController
 
   def destroy
     @recipe = Recipe.find(params[:recipe_id])
-    @ingredient = @recipe.ingredients.create(params[:ingredient])
+    @ingredient = Ingredient.find(params[:id])
     @ingredient.destroy
     respond_to do |format|
       format.html { redirect_to recipe_path(@recipe) }

@@ -1,5 +1,6 @@
 %tr
   %td= link_to recipe.name, recipe
+  %td= recipe.category.name
   %td= recipe.user.name
   - if user_signed_in?
     - if current_user.has_role? :admin

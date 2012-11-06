@@ -16,16 +16,18 @@ require 'spec_helper'
 
 describe Recipe do
   let(:user) { FactoryGirl.create(:user) }
-  before { @recipe = FactoryGirl.create(:recipe, user_id: user.id) }
+  let(:category) { FactoryGirl.create(:category) }
+  before { @recipe = FactoryGirl.create(:recipe, user: user, category: category) }
 
   subject { @recipe }
 
   it { should respond_to :name }
-  it { should respond_to :user_id }
+  it { should respond_to :user }
   it { should respond_to :prep_time }
   it { should respond_to :cook_time }
   it { should respond_to :servings }
   it { should respond_to :method }
+  it { should respond_to :category }
 
   its(:user) { should == user }
 
@@ -38,6 +40,11 @@ describe Recipe do
 
   describe "when method is not present" do
     before { @recipe.method = "" }
+    it { should_not be_valid }
+  end
+
+  describe "when category is not present" do
+    before { @recipe.category = nil }
     it { should_not be_valid }
   end
 

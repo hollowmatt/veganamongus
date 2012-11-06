@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121104025231) do
+ActiveRecord::Schema.define(:version => 20121105182907) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -38,10 +38,12 @@ ActiveRecord::Schema.define(:version => 20121104025231) do
     t.string   "cook_time"
     t.integer  "servings"
     t.text     "method"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+    t.integer  "category_id"
   end
 
+  add_index "recipes", ["category_id"], :name => "index_recipes_on_category_id"
   add_index "recipes", ["name"], :name => "index_recipes_on_name"
   add_index "recipes", ["user_id", "name"], :name => "index_recipes_on_user_id_and_name"
 

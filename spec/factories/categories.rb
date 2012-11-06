@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :category do
-    name "Beverages"
-    description "Hot, cold and blended drinks"
+    name "The Category"
+    description "Category Description"
   end
 end

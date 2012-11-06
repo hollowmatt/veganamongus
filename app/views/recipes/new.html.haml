@@ -23,6 +23,8 @@
       %fieldset
         = f.input :name, :label => "Name", :input_html => {:class => "full-width"}, :autofocus => true
       %fieldset
+        = collection_select(:recipe, :category_id, @categories, :id, :name, options: {:prompt => "-Select a category"}, class: "category")
+      %fieldset
         = f.input :prep_time, :label => "Preparation Time", :input_html => {:class => "full-width"}
       %fieldset
         = f.input :cook_time, :label => "Cooking Time", :input_html => {:class => "full-width"}
