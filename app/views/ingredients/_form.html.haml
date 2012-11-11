@@ -12,7 +12,7 @@
 -##
 .row
   .span8.offset3
-    = form_for [@recipe, @recipe.ingredients.build] do |f|
+    = form_for ([@recipe, @recipe.ingredients.build]), remote: true do |f|
       = f.label :amount
       = f.text_field :amount, :autofocus => true
 
