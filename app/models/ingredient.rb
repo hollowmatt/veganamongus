@@ -20,6 +20,8 @@ class Ingredient < ActiveRecord::Base
             presence: true
   validates :item,
             presence: true
+  validates :recipe_id,
+            presence: true
 
   default_scope order: "ingredients.created_at ASC"
 

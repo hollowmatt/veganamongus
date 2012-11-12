@@ -7,9 +7,10 @@
           %fieldset
             = f.label :name
             = f.text_field :name, :autofocus => true
-          %fieldset
-            = f.label :category
-            = f.collection_select :category_id, Category.all, :id, :name
+          - if Category.count > 0
+            %fieldset
+              = f.label "Category"
+              = f.collection_select :category_id, Category.all, :id, :name
           %fieldset
             = f.label :prep_time, "Preparation Time"
             = f.text_field :prep_time
@@ -34,16 +35,15 @@
           = f.fields_for :ingredients do |builder|
             %fieldset
               =render 'ingredient_fields', f:builder
-            .span8
-              = link_to_add_fields 'Add Ingredient', f, :ingredients
+          .span8
+            = link_to_add_fields 'Add Ingredient', f, :ingredients
       .div
         .span8.offset3
           %h2 Method
           %fieldset
             = f.label "Method"
             = f.text_area :method, placeholder: "Type in the method..."
-      .div
-        .span12
-          %fieldset
-            .center
-              = f.submit :class => "btn btn-success btn-xx-large center"
+      .div.span12
+        %fieldset
+          .center
+            = f.submit id: :submit, :class => "btn btn-success btn-xx-large center"

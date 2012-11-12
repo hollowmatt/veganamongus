@@ -1,0 +1,83 @@
+
+......FFF.FFFFF.
+
+Failures:
+
+  1) RecipePages non users show recipe 
+     Failure/Error: before { visit recipe_path(recipe) }
+     ActionView::Template::Error:
+       undefined method `name' for nil:NilClass
+     # ./app/views/recipes/_recipe_detail.html.haml:10:in `_app_views_recipes__recipe_detail_html_haml___221605522976694198_70149511591640'
+     # ./app/views/recipes/show.html.haml:6:in `_app_views_recipes_show_html_haml___646185579279893005_70149506746680'
+     # ./spec/requests/recipe_pages_spec.rb:84:in `block (4 levels) in <top (required)>'
+
+  2) RecipePages non users show recipe 
+     Failure/Error: before { visit recipe_path(recipe) }
+     ActionView::Template::Error:
+       undefined method `name' for nil:NilClass
+     # ./app/views/recipes/_recipe_detail.html.haml:10:in `_app_views_recipes__recipe_detail_html_haml___221605522976694198_70149511591640'
+     # ./app/views/recipes/show.html.haml:6:in `_app_views_recipes_show_html_haml___646185579279893005_70149506746680'
+     # ./spec/requests/recipe_pages_spec.rb:84:in `block (4 levels) in <top (required)>'
+
+  3) RecipePages as a user (non admin) edit recipe 
+     Failure/Error: before { visit edit_recipe_path(recipe) }
+     ActionView::Template::Error:
+       undefined method `name' for nil:NilClass
+     # ./app/views/recipes/_recipe.html.haml:3:in `_app_views_recipes__recipe_html_haml___3565843332623086148_70149527454620'
+     # ./app/views/recipes/index.html.haml:18:in `_app_views_recipes_index_html_haml__4457960603125071018_70149525908540'
+     # ./spec/requests/recipe_pages_spec.rb:130:in `block (4 levels) in <top (required)>'
+
+  4) RecipePages for admin users edit recipe edit recipe 
+     Failure/Error: before { visit edit_recipe_path(recipe) }
+     ActionView::Template::Error:
+       undefined method `category_id' for #<Recipe:0x007f99e977f9b8>
+     # ./app/views/recipes/_form.html.haml:12:in `block in _app_views_recipes__form_html_haml___1299454178106816569_70149527094420'
+     # ./app/views/recipes/_form.html.haml:3:in `_app_views_recipes__form_html_haml___1299454178106816569_70149527094420'
+     # ./app/views/recipes/edit.html.haml:4:in `_app_views_recipes_edit_html_haml__4096604018659136964_70149542887200'
+     # ./spec/requests/recipe_pages_spec.rb:61:in `block (4 levels) in <top (required)>'
+
+  5) RecipePages for admin users edit recipe visit edit recipe 
+     Failure/Error: before { visit edit_recipe_path(recipe) }
+     ActionView::Template::Error:
+       undefined method `category_id' for #<Recipe:0x007f99eb6e91a0>
+     # ./app/views/recipes/_form.html.haml:12:in `block in _app_views_recipes__form_html_haml___1299454178106816569_70149527094420'
+     # ./app/views/recipes/_form.html.haml:3:in `_app_views_recipes__form_html_haml___1299454178106816569_70149527094420'
+     # ./app/views/recipes/edit.html.haml:4:in `_app_views_recipes_edit_html_haml__4096604018659136964_70149542887200'
+     # ./spec/requests/recipe_pages_spec.rb:61:in `block (4 levels) in <top (required)>'
+
+  6) RecipePages for admin users new recipe add recipe with valid information should create a recipe
+     Failure/Error: fill_in "recipe_method",  with: "Mix avacados and junk together"
+     Capybara::ElementNotFound:
+       cannot fill in, no text field, text area or password field with id, name, or label 'recipe_method' found
+     # (eval):2:in `fill_in'
+     # ./spec/requests/recipe_pages_spec.rb:48:in `block (6 levels) in <top (required)>'
+
+  7) RecipePages for admin users new recipe add recipe with invalid information should not create a recipe
+     Failure/Error: expect { click_button submit }.not_to change(Recipe, :count)
+     Capybara::ElementNotFound:
+       no button with value or id or text 'Add Recipe' found
+     # (eval):2:in `click_button'
+     # ./spec/requests/recipe_pages_spec.rb:41:in `block (7 levels) in <top (required)>'
+     # ./spec/requests/recipe_pages_spec.rb:41:in `block (6 levels) in <top (required)>'
+
+  8) RecipePages for admin users new recipe visit new recipe page 
+     Failure/Error: it { should have_selector 'title', text: "Add Recipe" }
+       expected css "title" with text "Add Recipe" to return something
+     # ./spec/requests/recipe_pages_spec.rb:33:in `block (5 levels) in <top (required)>'
+
+Finished in 5.61 seconds
+16 examples, 8 failures
+
+Failed examples:
+
+rspec ./spec/requests/recipe_pages_spec.rb:87 # RecipePages non users show recipe 
+rspec ./spec/requests/recipe_pages_spec.rb:86 # RecipePages non users show recipe 
+rspec ./spec/requests/recipe_pages_spec.rb:131 # RecipePages as a user (non admin) edit recipe 
+rspec ./spec/requests/recipe_pages_spec.rb:74 # RecipePages for admin users edit recipe edit recipe 
+rspec ./spec/requests/recipe_pages_spec.rb:64 # RecipePages for admin users edit recipe visit edit recipe 
+rspec ./spec/requests/recipe_pages_spec.rb:51 # RecipePages for admin users new recipe add recipe with valid information should create a recipe
+rspec ./spec/requests/recipe_pages_spec.rb:40 # RecipePages for admin users new recipe add recipe with invalid information should not create a recipe
+rspec ./spec/requests/recipe_pages_spec.rb:33 # RecipePages for admin users new recipe visit new recipe page 
+
+Randomized with seed 5958
+
