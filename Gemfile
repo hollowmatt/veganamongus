@@ -16,7 +16,6 @@ end
 group :test do
   gem 'rspec'
   gem 'capybara'
-  #gem 'spork'
 end
 
 gem 'jquery-rails'
@@ -40,8 +39,4 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "will_paginate"
 gem 'carrierwave'
 gem 'mini_magick'
-=begin
-gem "guard-rspec", :group => [:development, :test]
-gem "rb-fsevent", :require => false, :group => :test
-gem "guard-spork", :group => [:development, :test]
-=end
+

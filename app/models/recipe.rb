@@ -15,7 +15,7 @@
 class Recipe < ActiveRecord::Base
   belongs_to :user
   belongs_to :category
-  has_many :ingredients, dependent: :delete_all
+  has_many :ingredients, dependent: :destroy
   accepts_nested_attributes_for :ingredients, allow_destroy: true
 
   validates :name,
@@ -25,7 +25,7 @@ class Recipe < ActiveRecord::Base
   validates :category_id,
             presence: true
 
-  attr_accessible :cook_time, :method, :name, :prep_time, :servings, :user, :category_id
+  attr_accessible :cook_time, :method, :name, :prep_time, :servings, :user, :category_id, :ingredients_attributes
 end
 
 

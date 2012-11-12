@@ -13,13 +13,14 @@ class RecipesController < ApplicationController
       redirect_to new_category_path, notice: "Cannot add a recipe until at least one Category exists."
     end
     @recipe = Recipe.new
+    @recipe.ingredients.build
   end
 
   def create
     @recipe = Recipe.new(params[:recipe])
     @recipe.user = current_user
     if @recipe.save
-      redirect_to recipe_path(@recipe), notice: "Recipe #{@recipe.name} has been added, pleasd add ingredients"
+      redirect_to recipe_path(@recipe), notice: "Recipe #{@recipe.name} has been added, please add ingredients"
     else
       render 'new'
     end

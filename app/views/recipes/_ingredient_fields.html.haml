@@ -1,0 +1,9 @@
+%fieldset
+  .span1
+    = f.text_field :amount, :autofocus => true, :style=>'width: 50px;'
+  .span1
+    = f.text_field :measure, :style=>'width: 50px;'
+  .span4
+    = f.text_field :item
+  .span1
+    = link_to_remove_fields 'remove' ,f

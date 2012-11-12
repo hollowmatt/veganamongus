@@ -10,16 +10,13 @@
 -##  created_at :datetime        not null
 -##  updated_at :datetime        not null
 -##
-.row
-  .span8.offset3
-    = form_for ([@recipe, @recipe.ingredients.build]), remote: true do |f|
-      = f.label :amount
-      = f.text_field :amount, :autofocus => true
 
-      = f.label :measure
-      = f.text_field :measure
+= f.label :amount
+= f.text_field :amount, :autofocus => true
 
-      = f.label :item
-      = f.text_field :item
-      %br
-      = f.submit "Add Ingredient", :class => "btn btn-success btn-mini center"
+= f.label :measure
+= f.text_field :measure
+
+= f.label :item
+= f.text_field :item
+%br

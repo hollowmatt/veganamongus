@@ -1,21 +1,4 @@
 -title("The Vegan Among Us | Edit Recipe")
 %h1= "Edit #{@recipe.name} Recipe"
 
-.row
-  .span8.offset3
-    = simple_form_for @recipe do |f|
-      %fieldset
-        = f.input :name, :label => "Name", :input_html => {:class => "full-width"}, :autofocus => true
-      %fieldset
-        = collection_select(:recipe, :category_id, @categories, :id, :name, options: {:prompt => "-Select a category"}, class: "category")
-      %fieldset
-        = f.input :prep_time, :label => "Preparation Time", :input_html => {:class => "full-width"}
-      %fieldset
-        = f.input :cook_time, :label => "Cooking Time", :input_html => {:class => "full-width"}
-      %fieldset
-        = f.input :servings, :label => "Number of Servings", :input_html => {:class => "full-width"}
-      %fieldset
-        = f.label "Method"
-        = f.text_area :method, :input_html => {:class => "full-width"}
-      %fieldset
-        = f.submit "Edit Recipe", :class => "btn btn-success btn-xx-large center"
+= render 'form'

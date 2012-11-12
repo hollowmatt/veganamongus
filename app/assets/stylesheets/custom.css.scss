@@ -45,6 +45,16 @@ section {
 
 textarea {
   resize: vertical;
+  width: 80%;
+}
+
+.span2{
+  &.width30 {
+    text_field{
+      width: 30%;
+      padding-left: 2px;
+    }
+  }
 }
 
 .center {
