@@ -4,22 +4,28 @@
       .div
         .span8.offset3
           %h2 General Info
-          %fieldset
-            = f.label :name
-            = f.text_field :name, :autofocus => true
-          - if Category.count > 0
+          .span3
             %fieldset
-              = f.label "Category"
-              = f.collection_select :category_id, Category.all, :id, :name
-          %fieldset
-            = f.label :prep_time, "Preparation Time"
-            = f.text_field :prep_time
-          %fieldset
-            = f.label :cook_time, "Cooking Time"
-            = f.text_field :cook_time
-          %fieldset
-            = f.label :servings, "Number of Servings"
-            = f.text_field :servings
+              = f.label :name
+              = f.text_field :name, :autofocus => true
+            - if Category.count > 0
+              %fieldset
+                = f.label "Category"
+                = f.collection_select :category_id, Category.all, :id, :name
+            %fieldset
+              = f.label :servings, "Number of Servings"
+              = f.text_field :servings
+
+          .span3
+            %fieldset
+              = f.label :prep_time, "Preparation Time"
+              = f.text_field :prep_time
+            %fieldset
+              = f.label :cook_time, "Cooking Time"
+              = f.text_field :cook_time
+            %fieldset
+              = f.label :photo, "Recipe Picture"
+              = f.file_field :photo
       .div
         .span8.offset3
           %h2 Ingredients

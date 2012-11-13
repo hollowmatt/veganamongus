@@ -1,4 +1,7 @@
 %tr
+  %td
+    -if !recipe.photo.blank?
+      =image_tag recipe.photo.thumb
   %td= link_to recipe.name, recipe
   %td= recipe.category.name
   %td= recipe.user.name

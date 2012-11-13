@@ -1,23 +1,28 @@
 .div
   .recipe-show
-    %table
-      %tbody
-        %tr
-          %th Name:
-          %td= @recipe.name
-        %tr
-          %th Category:
-          %td= @recipe.category.name
-        %tr
-          %th Servings:
-          %td= @recipe.servings
-        %tr
-          %th Prep Time:
-          %td= @recipe.prep_time
-        %tr
-          %th Cook Time:
-          %td= @recipe.cook_time
-
+    .span8
+      .span4
+        %table
+          %tbody
+            %tr
+              %th Name:
+              %td= @recipe.name
+            %tr
+              %th Category:
+              %td= @recipe.category.name
+            %tr
+              %th Servings:
+              %td= @recipe.servings
+            %tr
+              %th Prep Time:
+              %td= @recipe.prep_time
+            %tr
+              %th Cook Time:
+              %td= @recipe.cook_time
+      .span3
+        .recipe-image
+          -if !@recipe.photo.blank?
+            =image_tag @recipe.photo
     %h2= "Ingredients"
     .span8
       %table.table.table-condensed
