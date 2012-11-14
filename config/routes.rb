@@ -4,6 +4,7 @@ Veganamongus::Application.routes.draw do
     root :to => 'recipes#index'
   end
   root :to => "home#index"
+  match "/about", to: "home#about"
   devise_for :users
   devise_for :categories
   devise_for :recipes

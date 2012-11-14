@@ -24,6 +24,8 @@ test: &test
 production:
   <<: *default
   database: thevegan_prod
+  username: thevegan_prod
+  password: P3pp3r99
 
 cucumber:
   <<: *test
