@@ -3,7 +3,6 @@ gem 'rails', '3.2.8'
 gem 'pg'
 
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
 end
@@ -39,4 +38,6 @@ gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "will_paginate"
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'therubyracer'
+gem 'sass-rails',   '~> 3.2.3'
 
