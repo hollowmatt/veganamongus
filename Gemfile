@@ -17,6 +17,14 @@ group :test do
   gem 'capybara'
 end
 
+group :development, :test do
+  gem 'capistrano'
+  gem 'capistrano-ext'
+  gem 'capistrano-unicorn'
+  gem 'capistrano-rvm'
+  gem 'rvm'
+end
+
 gem 'jquery-rails'
 gem "unicorn", ">= 4.3.1", :group => :production
 gem "haml", ">= 3.1.7"
@@ -36,7 +44,7 @@ gem "rolify", ">= 3.2.0"
 gem "simple_form", ">= 2.0.4"
 gem "quiet_assets", ">= 1.0.1", :group => :development
 gem "will_paginate"
-gem 'carrierwave'
+gem 'carrierwave', '~> 0.7.0'
 gem 'mini_magick'
 gem 'therubyracer'
 gem 'sass-rails',   '~> 3.2.3'
