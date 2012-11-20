@@ -20,13 +20,13 @@ end
 group :development, :test do
   gem 'capistrano'
   gem 'capistrano-ext'
-  gem 'capistrano-unicorn'
+  #gem 'capistrano-unicorn'
   gem 'capistrano-rvm'
   gem 'rvm'
 end
 
 gem 'jquery-rails'
-gem "unicorn", ">= 4.3.1", :group => :production
+#gem "unicorn", ">= 4.3.1", :group => :production
 gem "haml", ">= 3.1.7"
 gem "haml-rails", ">= 0.3.5", :group => :development
 gem "hpricot", ">= 0.8.6", :group => :development
