@@ -1,10 +1,10 @@
 Veganamongus::Application.routes.draw do
 
   authenticated :user do
-    root :to => 'recipes#index'
+    root :to => 'recipes#index', :as => "authenticated_root"
   end
   root :to => "home#index"
-  match "/about", to: "home#about"
+  get "/about" => "home#about"
   devise_for :users
   devise_for :categories
   devise_for :recipes

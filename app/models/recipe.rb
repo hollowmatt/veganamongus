@@ -25,8 +25,8 @@ class Recipe < ActiveRecord::Base
   validates :category_id,
             presence: true
 
-  attr_accessible :cook_time, :method, :name, :prep_time,
-                  :servings, :user, :category_id, :ingredients_attributes, :photo
+  #attr_accessible :cook_time, :method, :name, :prep_time,
+  #                :servings, :user, :category_id, :ingredients_attributes, :photo
 
   mount_uploader :photo, PhotoUploader
 end

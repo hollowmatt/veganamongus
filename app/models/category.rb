@@ -9,7 +9,7 @@
 #  updated_at  :datetime        not null
 #
 class Category < ActiveRecord::Base
-  attr_accessible :description, :name
+  #attr_accessible :description, :name
   has_many :recipes
 
   validates :name,

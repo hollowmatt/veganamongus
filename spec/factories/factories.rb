@@ -10,7 +10,6 @@ FactoryGirl.define do
     prep_time "little bit"
     cook_time "longer"
     servings 1
-    method "mix junk"
     category
   end
 
