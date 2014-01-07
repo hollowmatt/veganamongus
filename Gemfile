@@ -3,6 +3,7 @@ ruby "2.0.0"
 gem 'rails', '4.0.2'
 gem 'pg'
 gem 'rails_12factor'
+gem 'protected_attributes'
 
 group :assets do
   gem 'coffee-rails'

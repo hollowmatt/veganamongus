@@ -9,6 +9,7 @@ FactoryGirl.define do
     user_id 1
     prep_time "little bit"
     cook_time "longer"
+    methodology "do stuff"
     servings 1
     category
   end
